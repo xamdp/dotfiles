@@ -49,7 +49,7 @@ return {
 
 	{
 		'nvim-telescope/telescope.nvim',
-		dependencies = { 'nvim-lua/plenary.nvim' } 
+		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 
 	{
@@ -64,13 +64,6 @@ return {
 
 	{
 		'nvim-tree/nvim-tree.lua',
-		dependencies = { 'akinsho/bufferline.nvim' }
 	},
-
-	{
-		'akinsho/bufferline.nvim',
-		version = "*",
-		dependencies = 'nvim-tree/nvim-web-devicons'
-	}
 
 }
