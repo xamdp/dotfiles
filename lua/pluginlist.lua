@@ -55,12 +55,8 @@ return {
 	},
 	"ThePrimeagen/harpoon",
 	"mbbill/undotree",
-	"andweeb/presence.nvim",
 	"/lambdalisue/suda.vim",
 	"barrett-ruth/live-server.nvim",
 
-	{
-		'nvim-tree/nvim-tree.lua',
-	},
 
 }
