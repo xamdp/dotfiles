@@ -57,6 +57,5 @@ return {
 	"mbbill/undotree",
 	"/lambdalisue/suda.vim",
 	"barrett-ruth/live-server.nvim",
-
-
+	"tpope/vim-fugitive"
 }
