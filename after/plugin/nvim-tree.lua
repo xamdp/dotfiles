@@ -1,6 +1,6 @@
 -- keybinds
 -- NvimTreeToggle
-vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<CR>', { noremap = true, silent = true}) 
+vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<CR>', { noremap = true, silent = true})
 
 -- NvimTreeFocus
 
