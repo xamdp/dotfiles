@@ -1,3 +1,3 @@
 ## WIP 
 
-This is a repository for my nvim configurations.
+This is a repo for my nvim configs.
