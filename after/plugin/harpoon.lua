@@ -9,4 +9,5 @@ vim.keymap.set("n", "<C-h>", function() ui.nav_file(2) end)
 vim.keymap.set("n", "<C-n>", function() ui.nav_file(3) end)
 vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)
 vim.keymap.set("n", "<C-j>", function() ui.nav_file(5) end)
+-- vim.keymap.set("n", "<C-k>", function() ui.nav_file(6) end) // already have a keybind for ctrl + k which is signature helps from lsp
 
