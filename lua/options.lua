@@ -20,6 +20,15 @@ vim.o.termguicolors = true
 
 vim .o.mouse = 'a'
 
+------------------------------------------------------------------------
+-- local o = vim.opt
+--
+-- o.colorcolumn = nil
+-- --
+-- -- Line numbers etc in Netrw
+-- vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
+------------------------------------------------------------------------
+
 vim.api.nvim_set_keymap('n', '<S-Z>S', ':w<CR>', { noremap = true, silent = true})	-- when in normal mode and as non-root user.
 vim.api.nvim_set_keymap('n', '<S-Z>W', ':SudaWrite<CR>', { noremap = true, silent = true})	-- when in normal mode and as root user, / suda.vim
 

@@ -34,13 +34,13 @@ return {
 
 	{ "folke/neodev.nvim", opts = {} },
 
-{
-        'hrsh7th/nvim-cmp',
-        dependencies = {
-            'L3MON4D3/LuaSnip',
-            'saadparwaiz1/cmp_luasnip',
-            'rafamadriz/friendly-snippets',
-            'hrsh7th/cmp-nvim-lsp',
+	{
+		'hrsh7th/nvim-cmp',
+		dependencies = {
+			'L3MON4D3/LuaSnip',
+			'saadparwaiz1/cmp_luasnip',
+			'rafamadriz/friendly-snippets',
+			'hrsh7th/cmp-nvim-lsp',
 		},
 	},
 
@@ -57,5 +57,9 @@ return {
 	"mbbill/undotree",
 	"/lambdalisue/suda.vim",
 	"barrett-ruth/live-server.nvim",
-	"tpope/vim-fugitive"
+	"tpope/vim-fugitive",
+	{
+		'prichrd/netrw.nvim',
+		dependencies = 'nvim-tree/nvim-web-devicons'
+	},
 }
