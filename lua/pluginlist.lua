@@ -23,11 +23,9 @@ return {
 			require("lualine").setup({
 				icons_enabled = true,
 				theme = 'gruvbox',
-
 			})
 		end,
 	},
-
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
@@ -43,21 +41,41 @@ return {
 			'hrsh7th/cmp-nvim-lsp',
 		},
 	},
-
 	{
 		'nvim-telescope/telescope.nvim',
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
-
 	{
 		'nvim-treesitter/nvim-treesitter',
 		build = ':TSUpdate',
 	},
-	"ThePrimeagen/harpoon",
+	{
+		'ThePrimeagen/harpoon',
+		branch = "harpoon2",
+		dependencies = { 'nvim-lua/plenary.nvim' }
+	},
 	"mbbill/undotree",
 	"/lambdalisue/suda.vim",
 	"barrett-ruth/live-server.nvim",
 	"tpope/vim-fugitive",
+	"tpope/vim-obsession",
+	{
+		"christoomey/vim-tmux-navigator",
+		cmd = {
+			"TmuxNavigateLeft",
+			"TmuxNavigateDown",
+			"TmuxNavigateUp",
+			"TmuxNavigateRight",
+			"TmuxNavigatePrevious",
+		},
+		keys = {
+			{ "<c-h>", "<cmd>TmuxNavigateLeft<cr>" },
+			{ "<c-j>", "<cmd>TmuxNavigateDown<cr>" },
+			{ "<c-k>", "<cmd>TmuxNavigateUp<cr>" },
+			{ "<c-l>", "<cmd>TmuxNavigateRight<cr>" },
+			{ "<c-\\>", "<cmd>TmuxNavigatePrevious<cr>" },
+		},
+	},
 	{
 		'prichrd/netrw.nvim',
 		dependencies = 'nvim-tree/nvim-web-devicons'
