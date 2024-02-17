@@ -20,7 +20,7 @@ Installation: https://phpactor.readthedocs.io/en/master/usage/standalone.html#gl
 ]],
     default_config = {
       cmd = { 'phpactor', 'language-server' },
-      root_dir = [[root_pattern("composer.json", ".git")]],
+      root_dir = [[root_pattern("composer.json",".git")]],
     },
   },
 }

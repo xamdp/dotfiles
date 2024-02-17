@@ -63,5 +63,15 @@ require("mason-lspconfig").setup_handlers({
 				end,
 			}
 		}
-	end
+	end,
+
+	['sqlls'] = function()
+		require('lspconfig').sqlls.setup {
+			capabilities = capabilities,
+			filetypes = { 'sql', 'mysql', 'sqlite' },
+			root_dir = function(_)
+				return vim.loop.cwd()
+			end,
+		}
+	end,
 })

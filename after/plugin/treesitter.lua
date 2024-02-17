@@ -12,9 +12,10 @@
 -- }
 
 require('nvim-treesitter.configs').setup {
-	ensure_installed = { 'vim', 'vimdoc', 'lua', 'cpp', 'c', 'java', 'html', 'css', 'php' },
+	ensure_installed = { 'vim', 'vimdoc', 'lua', 'cpp', 'c', 'java', 'html', 'css', 'php', 'sql', 'markdown', 'markdown_inline'},
+	sync_install = true,
 	auto_install = true,
+	ignore_install = {};
 	highlight = { enable = true },
 	indent = { enable = true},
-
 }
