@@ -1,1 +1,4 @@
-lazy-lock.json
+*
+!tmux/
+!nvim/
+

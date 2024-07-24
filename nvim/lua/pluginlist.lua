@@ -7,9 +7,6 @@ return {
 	},
 	{
 		"ellisonleao/gruvbox.nvim",
-		opts = {
-			transparent = true,
-		},
 		priority = 1000,
 		config = function()
 			vim.cmd("colorscheme gruvbox")
@@ -21,11 +18,12 @@ return {
 			"nvim-tree/nvim-web-devicons"
 		},
 	},
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig",
-
-	{ "folke/neodev.nvim", opts = {} },
+	{
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	},
+	"folke/neodev.nvim", opts = {},
 	{
 		'hrsh7th/nvim-cmp',
 		dependencies = {
@@ -50,24 +48,10 @@ return {
 	},
 	"prichrd/netrw.nvim",
 	"mbbill/undotree",
-	"/lambdalisue/suda.vim",
+	"lambdalisue/vim-suda",
 	"barrett-ruth/live-server.nvim",
 	"tpope/vim-fugitive",
 	"tpope/vim-obsession",
-	"tpope/vim-dadbod",
-	"kristijanhusak/vim-dadbod-ui",
 	"christoomey/vim-tmux-navigator",
-	"kristijanhusak/vim-dadbod-completion",
-	-- "nvim-tree/nvim-tree.lua",
-	"rcarriga/nvim-notify",
-	"epwalsh/obsidian.nvim",
 	"onsails/lspkind.nvim",
-	{
-		'mfussenegger/nvim-dap',
-		dependencies = {
-			'rcarriga/nvim-dap-ui',
-			'theHamsta/nvim-dap-virtual-text',
-			'nvim-telescope/telescope-dap.nvim'
-		},
-	}
 }
