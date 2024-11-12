@@ -86,6 +86,8 @@ require("mason-lspconfig").setup_handlers({
 		}
 	end,
 
+
+
 	['sqlls'] = function()
 		require('lspconfig').sqlls.setup {
 			capabilities = capabilities,
@@ -96,3 +98,10 @@ require("mason-lspconfig").setup_handlers({
 		}
 	end,
 })
+
+vim.cmd([[
+augroup PhpactorCache
+	autocmd!
+	autocmd BufWritePost *.php silent! !phpactor cache:clear
+augroup END
+]])

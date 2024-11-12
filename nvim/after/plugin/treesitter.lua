@@ -7,6 +7,7 @@ require'nvim-treesitter.parsers'.get_parser_configs().blade = {
 	filetype = "blade",
 }
 
+
 require('nvim-treesitter.configs').setup {
 	ensure_installed = {
 		'lua',
@@ -34,4 +35,20 @@ require('nvim-treesitter.configs').setup {
 		},
 	},
 	indent = { enable = true},
+	incremental_selection = {
+		enable = true,
+	},
+	textobjects = {
+		select = {
+			enable = true,
+		},
+	},
+	fold = {
+		enable = true,
+	},
 }
+
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.o.autochdir = false
+vim.o.foldlevel = 1

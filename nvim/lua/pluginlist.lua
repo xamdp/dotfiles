@@ -13,11 +13,17 @@ return {
 		end
 	},
 	{
-		'nvim-lualine/lualine.nvim',
-		dependencies = {
-			"nvim-tree/nvim-web-devicons"
-		},
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require('gitsigns').setup()
+		end
 	},
+	-- {
+	-- 	'nvim-lualine/lualine.nvim',
+	-- 	dependencies = {
+	-- 		"nvim-tree/nvim-web-devicons"
+	-- 	},
+	-- },
 	{
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
@@ -34,6 +40,13 @@ return {
 		},
 	},
 	{
+		'L3MON4D3/LuaSnip',
+		-- follow latest release.
+		version = "v2.*", --  Repleace <CurrentMajor> by the latest release major (first number of latest release)
+		-- install jsregexp (optional!).
+		build = "make_install_jsregexp"
+	},
+	{
 		'nvim-telescope/telescope.nvim',
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
@@ -46,6 +59,7 @@ return {
 		branch = "harpoon2",
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
+	"nvim-tree/nvim-web-devicons",
 	"prichrd/netrw.nvim",
 	"mbbill/undotree",
 	"lambdalisue/vim-suda",
@@ -54,4 +68,6 @@ return {
 	"tpope/vim-obsession",
 	"christoomey/vim-tmux-navigator",
 	"onsails/lspkind.nvim",
+	"andweeb/presence.nvim",
+	"vim-skk/eskk.vim",
 }
