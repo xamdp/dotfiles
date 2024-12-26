@@ -1,0 +1,4 @@
+*
+!tmux/
+!nvim/
+!nvim/**
