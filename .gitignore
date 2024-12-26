@@ -1,4 +1,6 @@
 *
+!alacritty/
+!alacritty/alacritty.toml
 !tmux/
 !tmux/**
 !nvim/
