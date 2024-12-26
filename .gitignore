@@ -1,4 +1,6 @@
 *
 !tmux/
+!tmux/**
 !nvim/
 !nvim/**
+tmux/plugins
