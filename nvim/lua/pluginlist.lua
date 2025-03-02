@@ -1,5 +1,13 @@
 return {
 	{
+		"3rd/image.nvim",
+		opts = {
+			rocks = {
+				hererocks = true,
+			},
+		},
+	},
+	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup()
@@ -74,57 +82,41 @@ return {
 		branch = "harpoon2",
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
+	{
+		'barrett-ruth/live-server.nvim',
+		build = 'pnpm add -g live-server',
+		cmd = { 'LiveServerStart', 'LiveServerStop' },
+		config = true
+	},
+	{
+		'echasnovski/mini.icons',
+		version = false,
+		config = function()
+			require('mini.icons').setup()
+		end
+	},
+	{
+		"OXY2DEV/markview.nvim",
+		lazy = false
+	},
+	{
+		'pysan3/fcitx5.nvim',
+		-- enabled = false,
+		lazy = false,
+		cond = vim.fn.executable("fcitx5-remote") == 1,
+		event = { "ModeChanged" },
+	},
 	"puremourning/vimspector",
 	"nvim-tree/nvim-web-devicons",
 	"prichrd/netrw.nvim",
 	"mbbill/undotree",
 	"lambdalisue/vim-suda",
-	"barrett-ruth/live-server.nvim",
 	"tpope/vim-fugitive",
 	"tpope/vim-obsession",
 	"christoomey/vim-tmux-navigator",
 	"onsails/lspkind.nvim",
-	"andweeb/presence.nvim",
-	"vim-skk/eskk.vim",
+	{
+		'vim-skk/eskk.vim',
+		lazy = false,
+	},
 }
--- {
--- 	"rcarriga/nvim-dap-ui",
--- 	dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
--- },
--- -- JS Debug Adapter for DAP
--- {
--- 	"microsoft/vscode-js-debug",
--- 	build = "npm install --legacy-peer-deps --no-save && npx gulp vsDebugServerBundle && rm -rf out && mv dist out",
--- 	version = "1.*",
--- },
--- {
--- 	"mxsdev/nvim-dap-vscode-js",
--- 	dependencies = { "mfussenegger/nvim-dap" },
--- 	config = function()
--- 		require("dap-vscode-js").setup({
--- 			-- Path to node executable, defaults to system node
--- 			node_path = "node",
--- 			-- Path to the vscode-js-debug installation
--- 			debugger_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug",
--- 			-- Adapters to register
--- 			adapters = {
--- 				"chrome",
--- 				"pwa-node",
--- 				"pwa-chrome",
--- 				"pwa-msedge",
--- 				"pwa-extensionHost",
--- 				"node-terminal",
--- 			},
--- 			-- Optional logging
--- 			-- log_file_path = vim.fn.stdpath("cache") .. "/dap_vscode_js.log",
--- 			-- log_file_level = vim.log.levels.DEBUG,
--- 			-- log_console_level = vim.log.levels.ERROR,
--- 		})
--- 	end,
--- },
--- {
--- 	-- JSON5 library
--- 	"Joakker/lua-json5",
--- 	build = "./install.sh",
--- },
-

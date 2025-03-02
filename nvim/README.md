@@ -1,14 +1,9 @@
-# nvim dotfiles - WIP
-
-Here is the list of my current installed plugins:
-
+# Neovim (WIP)
 
 ## Updates
 
-I've decided to use a much simpler statusline, previously, I use lualine.
-[Here](https://elianiva.my.id/posts/neovim-lua-statusline/) is the reference to where I copied much of the code.
-
-
-I have great plans to customize much further my neovim config.
-
-
+- I went back to my default statusline which is lualine.
+- from using `jj` as my escape key, replaced it with `capslock` instead.
+- Added `fcitx.nvim` plugin which allows me to automatically switch to active input method.
+- Added `image.nvim` which allows me to view images within the terminal using the backend `ueberzug`.
+- Removed plugins that I don't really need like the rich presence for Discord.

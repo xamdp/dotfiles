@@ -28,14 +28,15 @@ vim.g.netrw_keepdir = 0
 -- log levels
 vim.lsp.set_log_level("off")
 
-------------------------------------------------------------------------
+---------------------------------------
 local o = vim.opt
 
 o.colorcolumn = nil
 --
 -- Line numbers etc in Netrw
 vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
-------------------------------------------------------------------------
+---------------------------------------
+---
 
 vim.api.nvim_set_keymap('n', '<S-Z>S', ':w<CR>', { noremap = true, silent = true})	-- when in normal mode and as non-root user.
 
