@@ -1,9 +1,10 @@
-*
-!alacritty/
-!alacritty/alacritty.toml
-!tmux/
-!tmux/**
-!nvim/
-!nvim/**
-tmux/plugins
-!dot_zshrc
+# *
+# !alacritty/
+# !alacritty/alacritty.toml
+# !tmux/
+# !tmux/**
+# !nvim/
+# !nvim/**
+# tmux/plugins
+# !dot_zshrc
+
