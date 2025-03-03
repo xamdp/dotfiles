@@ -6,3 +6,4 @@
 !nvim/
 !nvim/**
 tmux/plugins
+!dot_zshrc
