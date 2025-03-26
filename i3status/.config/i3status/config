@@ -1,0 +1,31 @@
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "wireless wlp0s20f3"
+order += "battery 1"
+order += "tztime local"
+
+Battery 1 {
+	format = "%status %percentage"
+	format_down = "No battery"
+	status_chr = "⚡ CHR"
+	status_bat = "🔋 BAT"
+	status_unk = "? UNK"
+	status_full = "☻ FULL"
+	status_idle = "☻ IDLE"
+	path = "/sys/class/power_supply/BAT%d/uevent"
+	low_threshold = 10
+	last_full_capacity = true
+}
+
+wireless wlp0s20f3 {
+	format_up = "W: (%quality at %essid, %bitrate) %ip"
+	format_down = "W: down"
+}
+
+tztime local {
+    format = "%Y-%m-%d %H:%M:%S"
+}

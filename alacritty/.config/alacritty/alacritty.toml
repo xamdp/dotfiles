@@ -1,0 +1,32 @@
+[window]
+opacity = 0.9
+padding.x = 10
+padding.y = 10
+decorations = "none"
+decorations_theme_variant = "Light" # "Dark"
+
+[font]
+size = 9.0
+
+[font.bold]
+family = "Source Code Pro"
+style = "Bold"
+
+[font.bold_italic]
+family = "Source Code Pro"
+style = "Bold Italic"
+
+[font.italic]
+family = "Source Code Pro"
+style = "Italic"
+
+[font.normal]
+family = "Source Code Pro"
+style = "Regular"
+
+
+# normal.family = "Hack Nerd Font"
+# bold.family = "Hack Nerd Font"
+# italic.family = "Hack Nerd Font"
+# bold_italic.family = "Hack Nerd Font"
+
