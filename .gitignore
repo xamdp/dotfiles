@@ -7,4 +7,5 @@
 # !nvim/**
 # tmux/plugins
 # !dot_zshrc
+tmux/.config/tmux/plugins/
 
