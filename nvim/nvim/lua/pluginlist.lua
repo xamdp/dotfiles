@@ -1,16 +1,6 @@
 return {
-	-- {
-	-- 	"3rd/image.nvim",
-	-- 	-- enabled = false,
-	-- 	opts = {
-	-- 		rocks = {
-	-- 			hererocks = true,
-	-- 		},
-	-- 	},
-	-- },
 	{
-		"numToStr/Comment.nvim",
-		config = function()
+		"numToStr/Comment.nvim", config = function()
 			require("Comment").setup()
 		end
 	},
@@ -34,26 +24,30 @@ return {
 		},
 	},
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		opts = {
-			ensure_installed = {
-				"clangd",
-				"css-lsp",
-				"html-lsp",
-				"lua-language-server",
-				"phpactor",
-				"typescript-language-server",
-				"php-cs-fixer",
-				"phpcs",
-				"js-debug-adapter"
-			}
-		}
+		},
+		dependencies = {
+			{ "mason-org/mason.nvim", opts = {
+				ensure_installed = {
+					"clangd",
+					"css-lsp",
+					"html-lsp",
+					"lua-language-server",
+					"phpactor",
+					"typescript-language-server",
+					"php-cs-fixer",
+					"phpcs",
+					"js-debug-adapter"
+				},
+			},
+			},
+			"neovim/nvim-lspconfig",
+		},
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
+		"folke/neodev.nvim", opts = {},
 	},
-	"folke/neodev.nvim", opts = {},
 	{
 		'hrsh7th/nvim-cmp',
 		dependencies = {
@@ -75,8 +69,9 @@ return {
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 	{
-		'nvim-treesitter/nvim-treesitter',
-		build = ':TSUpdate',
+		"nvim-treesitter/nvim-treesitter",
+		dependencies = { 'OXY2DEV/markview.nvim' },
+		lazy = false,
 	},
 	{
 		'ThePrimeagen/harpoon',
@@ -95,10 +90,6 @@ return {
 		config = function()
 			require('mini.icons').setup()
 		end
-	},
-	{
-		"OXY2DEV/markview.nvim",
-		lazy = false
 	},
 	{
 		'pysan3/fcitx5.nvim',

@@ -13,14 +13,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# NVIM
 export PATH="$HOME/.local/share/pnpm:$PATH"
+export NVIM_APPNAME='nvim'
 alias nvim="setxkbmap -option caps:escape_shifted_capslock && nvim"
+# alias kick='NVIM_APPNAME="nvim-kickstart" nvim'
 
 
 # tmux
 [ -z "$TMUX"  ] && { tmux attach || exec tmux && exit;}
 
 PATH="$PATH":"$HOME/.local/scripts/"
+PATH="$PATH":"$HOME/.config/dunst/"
+
 bind '"\C-f":"tmux-sessionizer\n"'
 
 # NNN
@@ -31,3 +36,7 @@ export NNN_OPTS='de'
 #lazygit
 alias lg='lazygit'
 
+alias start-apue='VBoxManage startvm "netbsd9" --type headless'
+
+alias cc='gcc ${CFLAGS}'
+CFLAGS='-Wall -Werror -Wextra'

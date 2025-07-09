@@ -24,6 +24,7 @@ font pango: Source Code Pro 12
 exec --no-startup-id dex-autostart --autostart --environment i3
 
 exec --no-startup-id fcitx5 -d
+exec --no-startup-id dunst
 
 exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -43,14 +44,18 @@ exec --no-startup-id nm-applet
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 
 # Use pamixer to adjust volume in pipewire
-bindsym XF86AudioRaiseVolume exec pamixer -i 5 && $refresh_i3status
-bindsym XF86AudioLowerVolume exec pamixer -d 5 && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioRaiseVolume exec pamixer -i 5 && $refresh_i3status && $HOME/.config/dunst/changeVolume.sh
+bindsym XF86AudioLowerVolume exec pamixer -d 5 && $refresh_i3status && $HOME/.config/dunst/changeVolume.sh
+bindsym XF86AudioMute exec pamixer -t && $refresh_i3status && $HOME/.config/dunst/changeVolume.sh
+bindsym XF86AudioMicMute exec --no-startup-id $HOME/.config/dunst/mic-toggle.sh
 
 # Use brightnessctl to adjust screen brightness
-bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s +5%
-bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight s 5%-
+# bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s +5%
+# bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight s 5%-
+
+bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/.config/dunst/brightness.sh up
+bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.config/dunst/brightness.sh down
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -63,7 +68,7 @@ tiling_drag modifier titlebar
 bindsym $mod+e exec thunar
 
 # full screenshot and save it
-bindsym Print exec flameshot full -p ~/Pictures/Screenshots
+# bindsym Print exec flameshot full -p ~/Pictures/Screenshots
 
 # area screenshot and copy to clipboard
 bindsym $mod+Print exec --no-startup-id flameshot gui -r | xclip -selection clipboard -t image/png
@@ -73,6 +78,7 @@ bindsym Shift+Print exec --no-startup-id flameshot gui -p ~/Pictures/Screenshots
 
 # kill focused window
 bindsym $mod+q kill
+
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
@@ -170,6 +176,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 assign [class="Chromium"] $ws2 
 assign [class="TelegramDesktop"] $ws3 
+assign [class="obsidian"] $ws4
 assign [class="obs"] $ws5 
 
 for_window [class="Alacritty"] \
@@ -218,10 +225,10 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym $mod+Ctrl+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+Ctrl+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -234,4 +241,8 @@ gaps inner 5
 
 # set wallpaper
 exec_always feh --bg-scale ~/Pictures/Wallpapers/astro.jpg
+exec_always --no-startup-id xmodmap ~/.Xmodmap
 
+#ames bindings
+bindsym $mod+r exec --nostartup-id $HOME/.local/scripts/ames.sh -r
+bindsym Print exec --no-startup-id $HOME/.local/scripts/ames.sh -s
