@@ -13,10 +13,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 		end
 
-		map("gl", vim.diagnostic.open_float, "Open Diagnostic Float")
+		map("<leader>D", vim.diagnostic.open_float, "Open Diagnostic Float")
 		map("K", vim.lsp.buf.hover, "Hover Documentation")
 		map("gs", vim.lsp.buf.signature_help, "Signature Documentation")
-		map("gD", vim.lsp.buf.declaration, "Goto Declaration")
+		map("gd", vim.lsp.buf.declaration, "Goto Declaration")
 		map("<leader>la", vim.lsp.buf.code_action, "Code Action")
 		map("<leader>lr", vim.lsp.buf.rename, "Rename all references")
 		map("<leader>lf", vim.lsp.buf.format, "Format")

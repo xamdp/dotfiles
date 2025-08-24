@@ -1,6 +1,5 @@
 vim.lsp.enable({
 	"lua_ls",
-	-- "html_ls",
 	"emmet_ls"
 })
 
