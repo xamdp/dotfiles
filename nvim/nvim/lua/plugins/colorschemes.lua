@@ -5,7 +5,7 @@ return {
 	priority = 1000,
 	config = function()
 		require("vague").setup({
-			transparent = false,
+			transparent = true,
 			bold = true,
 			italic = true,
 		})
