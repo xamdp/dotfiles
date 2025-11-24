@@ -4,7 +4,7 @@ return {
 		branch = 'master',
 		lazy = false,
 		build = ":TSUpdate",
-		config = function ()
+		config = function()
 			local configs = require("nvim-treesitter.configs")
 
 			configs.setup({

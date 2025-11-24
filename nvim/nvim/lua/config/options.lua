@@ -27,11 +27,14 @@ vim.opt.termguicolors = true
 vim.o.termguicolors = true
 -- vim.o.clipboard = 'unnamedplus'
 
-vim.g.netrw_keepdir = 0
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- vim.g.netrw_keepdir = 0
 vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
 
 vim.diagnostic.config({
-	virtual_lines =  true,
+	virtual_lines = true,
 	underline = true,
 	update_in_insert = false,
 	severity_sort = true,

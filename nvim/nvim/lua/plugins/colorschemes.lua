@@ -1,14 +1,18 @@
 return {
-	"vague2k/vague.nvim",
-	lazy = false,
-	enabled = true,
+	"ellisonleao/gruvbox.nvim",
+	name = "gruvbox",
 	priority = 1000,
 	config = function()
-		require("vague").setup({
-			transparent = true,
-			bold = true,
-			italic = true,
+		require("gruvbox").setup({
+			contrast = "hard",
+			transparent_mode = true,
+			italic = {
+				strings = false,
+				comments = true,
+				operators = false,
+				folds = true,
+			},
 		})
-		vim.cmd("colorscheme vague")
+		vim.cmd("colorscheme gruvbox")
 	end,
 }
