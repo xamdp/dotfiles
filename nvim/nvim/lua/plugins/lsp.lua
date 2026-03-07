@@ -4,7 +4,7 @@ return {
 		dependencies = {
 			"mason-org/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig",
-			"artemave/workspace-diagnostics.nvim"
+			"artemave/workspace-diagnostics.nvim",
 		},
 		opts = {
 			servers = {
@@ -16,7 +16,7 @@ return {
 							},
 							diagnostics = {
 								globals = { "vim" },
-								disable = { 'missing-fields' },
+								disable = { "missing-fields" },
 							},
 							workspace = {
 								library = vim.api.nvim_get_runtime_file("", true),
@@ -29,22 +29,28 @@ return {
 				ts_ls = {
 					on_attach = function(client, bufnr)
 						require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
-					end
+					end,
 				},
 				eslint = {
 					on_attach = function(client, bufnr)
 						require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
-					end
+					end,
 				},
 				tailwindcss = {
 					on_attach = function(client, bufnr)
 						require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
-					end
+					end,
 				},
 				emmet_ls = {
 					on_attach = function(client, bufnr)
 						require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
-					end
+					end,
+				},
+				clangd = {
+					cmd = {
+						"clangd",
+						"--compile-commands-dir=" .. vim.fn.getcwd(),
+					},
 				},
 			},
 		},
@@ -52,9 +58,11 @@ return {
 		config = function(_, opts)
 			require("mason").setup()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "clangd", "lua_ls", "ts_ls", "eslint", "phpactor", "emmet_ls" }
+				ensure_installed = { "clangd", "lua_ls", "ts_ls", "eslint", "phpactor", "emmet_ls", "jdtls" },
+				automatic_enable = {
+					exclude = { "jdtls" },
+				},
 			})
-
 
 			-- local lspconfig = require("lspconfig")
 
@@ -63,6 +71,7 @@ return {
 				-- lspconfig[server].setup(config)
 				vim.lsp.enable(server)
 			end
-		end
+		end,
 	},
+	{ "mfussenegger/nvim-jdtls" },
 }

@@ -1,18 +1,30 @@
 return {
-	"ellisonleao/gruvbox.nvim",
-	name = "gruvbox",
+    "scottmckendry/cyberdream.nvim",
+	name = "cyberdream",
+	lazy = false,
 	priority = 1000,
 	config = function()
-		require("gruvbox").setup({
-			contrast = "hard",
-			transparent_mode = true,
-			italic = {
-				strings = false,
-				comments = true,
-				operators = false,
-				folds = true,
+		require("cyberdream").setup({
+			variant = "auto",
+			transparent = true,
+			saturation = 1,
+			italic_comments = false,
+			hide_fillchars = false,
+			borderless_pickers = true,
+			terminal_colors = true,
+			cache = false,
+			highlights = {
+				comment = { fg = "#696969", bg = "NONE", italic = true },
+			},
+			extensions = {
+				telescope = true,
+				notify = true,
+				mini = true,
+				cmp = true,
 			},
 		})
-		vim.cmd("colorscheme gruvbox")
+		vim.cmd("colorscheme cyberdream")
 	end,
 }
+
+	-- "ellisonleao/gruvbox.nvim",

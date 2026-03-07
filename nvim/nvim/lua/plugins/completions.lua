@@ -15,7 +15,20 @@ return {
 			nerd_font_variant = 'mono'
 		},
 
-		completion = { documentation = { auto_show = true } },
+		completion = {
+			documentation = { auto_show = true },
+			menu = {
+				draw = {
+					components = {
+						kind_icon = {
+							text = function(ctx)
+								return require('lspkind').symbol_map[ctx.kind] or ''
+							end,
+						},
+					},
+				},
+			},
+		},
 
 		sources = {
 			default = { 'lsp', 'path', 'snippets', 'buffer' },

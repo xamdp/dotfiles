@@ -27,10 +27,10 @@ vim.opt.termguicolors = true
 vim.o.termguicolors = true
 -- vim.o.clipboard = 'unnamedplus'
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 
--- vim.g.netrw_keepdir = 0
+vim.g.netrw_keepdir = 0
 vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
 
 vim.diagnostic.config({
