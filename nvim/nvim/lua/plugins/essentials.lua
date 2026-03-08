@@ -17,10 +17,16 @@ return {
 	},
 	{
 		"windwp/nvim-ts-autotag",
-		ft = { "html", "javascript", "typescriptreact", "tsx", "jsx" },
-		config = function()
+		opts = function()
 			require("nvim-ts-autotag").setup({
-				enable_close_on_slash = false,
+				opts = {
+					enable_close = true,
+					enable_rename = true,
+					enable_close_on_slash = false,
+				},
+				per_filetype = {
+					["html"] = { enable_close = false },
+				},
 			})
 		end,
 	},
