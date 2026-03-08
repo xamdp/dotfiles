@@ -16,8 +16,23 @@ export NVM_DIR="$HOME/.nvm"
 # NVIM
 export PATH="$HOME/.local/share/pnpm:$PATH"
 export NVIM_APPNAME='nvim'
-alias nvim="setxkbmap -option caps:escape_shifted_capslock && nvim"
+export MANPAGER='nvim +Man!'
+
+alias vim="setxkbmap -option caps:escape_shifted_capslock && nvim"
+
 # alias kick='NVIM_APPNAME="nvim-kickstart" nvim'
+
+export TERMINAL='alacritty'
+
+# intellij IDEA
+export PATH="$PATH:$HOME/opts/idea-IU-253.29346.240/bin/"
+
+
+# go path
+export PATH="$PATH:$HOME/go/bin"
+
+# TLauncher
+export PATH="$PATH:$HOME/minedev/mc"
 
 
 # tmux
@@ -36,7 +51,9 @@ export NNN_OPTS='de'
 #lazygit
 alias lg='lazygit'
 
+# headless vm
 alias start-apue='VBoxManage startvm "netbsd9" --type headless'
 
+# for compiling
 alias cc='gcc ${CFLAGS}'
 CFLAGS='-Wall -Werror -Wextra'
