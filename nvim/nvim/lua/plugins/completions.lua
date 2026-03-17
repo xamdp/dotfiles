@@ -1,8 +1,8 @@
 return {
-	'saghen/blink.cmp',
-	dependencies = { 'rafamadriz/friendly-snippets' },
+	"saghen/blink.cmp",
+	dependencies = { "rafamadriz/friendly-snippets" },
 
-	version = '1.*',
+	version = "1.*",
 	opts = {
 		keymap = {
 			preset = "default",
@@ -12,7 +12,7 @@ return {
 			["<C><leader>"] = { "show" },
 		},
 		appearance = {
-			nerd_font_variant = 'mono'
+			nerd_font_variant = "mono",
 		},
 
 		completion = {
@@ -22,7 +22,7 @@ return {
 					components = {
 						kind_icon = {
 							text = function(ctx)
-								return require('lspkind').symbol_map[ctx.kind] or ''
+								return require("lspkind").symbol_map[ctx.kind] or ""
 							end,
 						},
 					},
@@ -31,10 +31,10 @@ return {
 		},
 
 		sources = {
-			default = { 'lsp', 'path', 'snippets', 'buffer' },
+			default = { "lsp", "path", "snippets", "buffer" },
 		},
 
-		fuzzy = { implementation = "prefer_rust_with_warning" }
+		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
-	opts_extend = { "sources.default" }
+	opts_extend = { "sources.default" },
 }
