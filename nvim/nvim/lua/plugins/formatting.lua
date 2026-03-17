@@ -28,6 +28,6 @@ return {
 			timeout = 1000,
 			lsp_format = "fallback",
 		},
-		log_level = vim.log.levels.DEBUG,
+		log_level = vim.log.levels.ERROR,
 	},
 }
