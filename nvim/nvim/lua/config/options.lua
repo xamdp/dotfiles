@@ -36,14 +36,14 @@ vim.g.netrw_keepdir = 0
 vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
 
 vim.diagnostic.config({
-	virtual_lines = true,
+	virtual_lines = false,
 	underline = true,
 	update_in_insert = false,
 	severity_sort = true,
-	float = {
-		border = "rounded",
-		source = true,
-	},
+	-- float = {
+	-- 	border = "rounded",
+	-- 	source = true,
+	-- },
 	signs = {
 		text = {
 			[vim.diagnostic.severity.ERROR] = "󰅚 ",
