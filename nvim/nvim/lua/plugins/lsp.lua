@@ -33,6 +33,11 @@ return {
 						require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
 					end,
 				},
+				phpactor = {
+					on_attach = function(client, bufnr)
+						require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+					end,
+				},
 				eslint = {
 					on_attach = function(client, bufnr)
 						require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
@@ -104,6 +109,7 @@ return {
 					"emmet_language_server",
 					"jdtls",
 					"postgres_lsp",
+					"tailwindcss",
 				},
 				automatic_enable = {
 					exclude = { "jdtls" },

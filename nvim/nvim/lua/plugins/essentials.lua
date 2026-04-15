@@ -1,5 +1,6 @@
 return {
 	"mbbill/undotree",
+	"lambdalisue/vim-suda",
 	{
 		"nvim-tree/nvim-web-devicons",
 		opts = {},
