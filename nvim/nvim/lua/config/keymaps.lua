@@ -17,8 +17,11 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
--- sudavim
+-- keybing for :w
 vim.api.nvim_set_keymap("n", "<S-Z>S", ":w<CR>", { noremap = true, silent = true }) -- when in normal mode and as non-root user.
+
+-- sudavim
+vim.api.nvim_set_keymap("n", "<S-Z>W", ":SudaWrite<CR>", { noremap = true, silent = true }) -- when in normal mode and as root user, / suda.vim
 
 -- screenkey
 -- local function toggleScreenkey()
