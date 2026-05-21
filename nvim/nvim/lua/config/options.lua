@@ -15,7 +15,7 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.signcolumn = "yes"
-vim.opt.updatetime = 300
+vim.opt.updatetime = 1000
 vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
@@ -41,6 +41,8 @@ vim.o.foldnestmax = 3
 
 vim.g.netrw_keepdir = 0
 vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
+
+vim.g.nvim_treesitter_disable_auto_update = 1
 
 vim.diagnostic.config({
 	virtual_lines = false,
