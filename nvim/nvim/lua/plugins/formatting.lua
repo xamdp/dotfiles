@@ -20,13 +20,16 @@ return {
 			clang_format = {
 				prepend_args = { "--style=file", "--fallback-style=LLVM" },
 			},
+			prettier = {
+				prepend_args = { "--tab-width", "4" },
+			},
 		},
 		default_format_opts = {
 			lsp_format = "fallback",
 		},
 		format_on_save = {
 			timeout = 1000,
-			lsp_format = "fallback",
+			lsp_format = "last",
 		},
 		log_level = vim.log.levels.ERROR,
 	},
