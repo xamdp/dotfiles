@@ -184,18 +184,18 @@ assign [class="obs"] $ws5
 # move the window to the scratchpad
 # show the scratchpad
 
-bindsym $mod+Return exec --no-startup-id alacritty --class __scratchpad
+# bindsym $mod+Return exec --no-startup-id alacritty --class __scratchpad
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # auto opens, no hide yet
-exec --no-startup-id alacritty --class __scratchpad  
+# exec --no-startup-id alacritty --class __scratchpad  
 # sleep for a moment
-exec --no-startup-id sh -c 'sleep 0.8 && i3-msg "[class=\"__scratchpad\"] move scratchpad"'
+# exec --no-startup-id sh -c 'sleep 0.8 && i3-msg "[class=\"__scratchpad\"] move scratchpad"'
 # move to scratchpad, any window?
-bindsym $mod+Shift+minus move scratchpad
+# bindsym $mod+Shift+minus move scratchpad
 # toggle to show
-bindsym $mod+Tab [class="__scratchpad"] scratchpad show
-for_window [class="__scratchpad"] floating enable, resize set 80 ppt 60 ppt, move position center
-
+# bindsym $mod+Tab [class="__scratchpad"] scratchpad show
+# for_window [class="__scratchpad"] floating enable, resize set 100 ppt 95 ppt, move position center
 
 
 # reload the configuration file

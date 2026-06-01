@@ -5,7 +5,17 @@ return {
 		lazy = false,
 		build = ":TSUpdate",
 		opts = {
-			ensure_installed = { "lua", "c", "html", "javascript", "http", "sql", "markdown", "markdown_inline" },
+			ensure_installed = {
+				"lua",
+				"c",
+				"html",
+				"javascript",
+				"http",
+				"sql",
+				"markdown",
+				"markdown_inline",
+				"prisma",
+			},
 			sync_install = false,
 			highlight = { enable = true },
 			indent = { enable = true },

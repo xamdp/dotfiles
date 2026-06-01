@@ -4,12 +4,26 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim", -- required
 			"nvim-telescope/telescope-ui-select.nvim",
+
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
 		config = function()
 			local builtin = require("telescope.builtin")
 
-			-- === YOUR REQUESTED KEYMAPS (exactly as you wrote them) ===
-			vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Telescope find files" })
+			vim.keymap.set("n", "<leader>ff", function()
+				builtin.find_files({
+					hidden = true,
+					no_ignore = true,
+					file_ignore_patterns = {
+						"node_modules",
+						".git",
+						".cache",
+						"dist",
+						"build",
+						".next",
+					},
+				})
+			end, { desc = "Telescope find files" })
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
@@ -37,14 +51,16 @@ return {
 					lsp_type_definitions = { theme = "ivy" },
 					lsp_document_symbols = { theme = "ivy" },
 					lsp_dynamic_workspace_symbols = { theme = "ivy" },
+					find_files = { theme = "cursor", hidden = true },
 				},
 			})
 
 			-- Makes code actions, etc. use a nicer dropdown
 			require("telescope").load_extension("ui-select")
+			require("telescope").load_extension("fzf")
 		end,
 	},
-	{
-		"nvim-telescope/telescope-ui-select.nvim",
-	},
+	-- {
+	-- 	"nvim-telescope/telescope-ui-select.nvim",
+	-- },
 }

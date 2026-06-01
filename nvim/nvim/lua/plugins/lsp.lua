@@ -48,6 +48,12 @@ return {
 						require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
 					end,
 				},
+
+				prismals = {
+					on_attach = function(client, bufnr)
+						require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+					end,
+				},
 				emmet_language_server = {
 					on_attach = function(client, bufnr)
 						require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
@@ -110,6 +116,7 @@ return {
 					"jdtls",
 					"postgres_lsp",
 					"tailwindcss",
+					"prismals",
 				},
 				automatic_enable = {
 					exclude = { "jdtls" },
