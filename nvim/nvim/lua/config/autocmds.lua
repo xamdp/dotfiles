@@ -82,3 +82,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 	end,
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	group = vim.api.nvim_create_augroup("ts-auto-import", { clear = true }),
+	pattern = { "*.ts", "*.tsx", "*.js", "*.jsx", "*.mjs", "*.cjs" },
+	callback = function()
+		local client = vim.lsp.get_clients({ bufnr = 0, name = "ts_ls" })[1]
+		if client then
+			vim.lsp.buf.code_action({
+				filter = function(action)
+					return action.kind == "source.addMissingImports.ts"
+				end,
+				apply = true,
+			})
+		end
+	end,
+})

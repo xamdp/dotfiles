@@ -36,10 +36,16 @@ vim.o.foldlevel = 99
 vim.o.foldnestmax = 3
 -- vim.o.clipboard = 'unnamedplus'
 
+-- netrw options
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 
-vim.g.netrw_keepdir = 0
+vim.g.netrw_keepdir = 1
+-- vim.g.netrw_liststyle = 3
+vim.g.netrw_banner = 0
+-- vim.g.netrw_winsize = 25
+-- vim.g.netrw_browse_split = 4
+-- vim.g.netrw_altv = 1
 vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
 
 vim.g.nvim_treesitter_disable_auto_update = 1
@@ -72,3 +78,10 @@ vim.filetype.add({
 		["http"] = "http",
 	},
 })
+
+-- Open file explorer on startup
+-- vim.api.nvim_create_augroup("ProjectDrawer", { clear = true })
+-- vim.api.nvim_create_autocmd("VimEnter", {
+-- 	group = "ProjectDrawer",
+-- 	command = "Vexplore",
+-- })

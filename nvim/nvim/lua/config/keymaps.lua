@@ -1,8 +1,11 @@
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
+-- vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 
--- similar to whichkey
+-- similar to whichhey
 vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
+
+-- remap jj to enter normal mode, when in term
+vim.keymap.set("t", "jj", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
 -- vim explore, netrw
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
