@@ -49,3 +49,34 @@ vim.keymap.set("n", "<leader>rt", function()
 	local cmd = string.format("cd %s && mvn test", vim.fn.shellescape(root_dir))
 	vim.cmd("terminal " .. cmd)
 end, { desc = "[T]est current exercise" })
+
+vim.keymap.set("n", "<leader>gw", function()
+	-- Get raw list output
+	local raw = vim.fn.systemlist("git worktree list --porcelain")
+	local paths = {}
+	local i = 1
+	for _, line in ipairs(raw) do
+		if line:match("^worktree ") then
+			paths[i] = line:gsub("^worktree ", "")
+			i = i + 1
+		end
+	end
+
+	-- Show picker
+	vim.ui.select(paths, { prompt = "Switch worktree:" }, function(selected)
+		if selected then
+			require("git-worktree").switch_worktree(selected)
+			vim.notify("Switched to worktree: " .. selected)
+		end
+	end)
+end, { desc = "Switch worktree" })
+
+-- Create worktree
+vim.keymap.set("n", "<leader>gc", function()
+	vim.ui.input({ prompt = "Branch: " }, function(branch)
+		if branch and branch ~= "" then
+			require("git-worktree").create_worktree(branch, branch, "origin")
+			vim.notify("Created worktree: " .. branch)
+		end
+	end)
+end, { desc = "Create worktree" })
