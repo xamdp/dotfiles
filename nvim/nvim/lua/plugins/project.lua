@@ -1,7 +1,9 @@
 -- Lua
 return {
-	"ahmedkhalf/project.nvim",
-	init = function()
-		require("project_nvim").setup({})
-	end,
+	"DrKJeff16/project.nvim",
+	dependencies = { -- OPTIONAL. Choose any of the following
+		-- "folke/snacks.nvim",
+		"ibhagwan/fzf-lua",
+	},
+	opts = {},
 }
