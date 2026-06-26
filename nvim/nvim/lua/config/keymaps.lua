@@ -26,11 +26,6 @@ vim.api.nvim_set_keymap("n", "<S-Z>S", ":w<CR>", { noremap = true, silent = true
 -- sudavim
 vim.api.nvim_set_keymap("n", "<S-Z>W", ":SudaWrite<CR>", { noremap = true, silent = true }) -- when in normal mode and as root user, / suda.vim
 
--- screenkey
--- local function toggleScreenkey()
--- 	vim.cmd("Screenkey toggle")
--- end
---
 -- vim.keymap.set("n", "<leader>ts", toggleScreenkey, { desc = "[T]oggle [S]creenkey" })
 
 -- run mooc.fi current java exercise main class
@@ -50,33 +45,18 @@ vim.keymap.set("n", "<leader>rt", function()
 	vim.cmd("terminal " .. cmd)
 end, { desc = "[T]est current exercise" })
 
-vim.keymap.set("n", "<leader>gw", function()
-	-- Get raw list output
-	local raw = vim.fn.systemlist("git worktree list --porcelain")
-	local paths = {}
-	local i = 1
-	for _, line in ipairs(raw) do
-		if line:match("^worktree ") then
-			paths[i] = line:gsub("^worktree ", "")
-			i = i + 1
-		end
-	end
+vim.keymap.set("n", "<leader>gws", function()
+	Snacks.picker.worktrees()
+end, { desc = "[G]it [W]orktrees [S]how" })
 
-	-- Show picker
-	vim.ui.select(paths, { prompt = "Switch worktree:" }, function(selected)
-		if selected then
-			require("git-worktree").switch_worktree(selected)
-			vim.notify("Switched to worktree: " .. selected)
-		end
-	end)
-end, { desc = "Switch worktree" })
+vim.keymap.set("n", "<leader>gwn", function()
+	Snacks.picker.worktrees_new()
+end, { desc = "[G]it [W]orktree [N]ew" })
 
--- Create worktree
-vim.keymap.set("n", "<leader>gc", function()
-	vim.ui.input({ prompt = "Branch: " }, function(branch)
-		if branch and branch ~= "" then
-			require("git-worktree").create_worktree(branch, branch, "origin")
-			vim.notify("Created worktree: " .. branch)
-		end
-	end)
-end, { desc = "Create worktree" })
+vim.keymap.set("n", "<leader>gwr", function()
+	Snacks.picker.worktrees_remove()
+end, { desc = "[G]it [W]orktree [R]emove" })
+
+vim.keymap.set("n", "<leader>sr", function()
+	require("telescope").extensions.worktrees.list_worktrees(opts)
+end, { desc = "List Worktrees" })
