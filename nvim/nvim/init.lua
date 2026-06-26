@@ -3,3 +3,5 @@ require("core.lazy")
 require("config.keymaps")
 require("config.autocmds")
 require("config.dapconf")
+
+require("telescope").load_extension("worktrees")
