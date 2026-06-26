@@ -15,42 +15,49 @@ return {
 			function()
 				require("fzf-lua").files()
 			end,
-			desc = "Fuzzy search files",
+			desc = "[F]uzzy search [F]iles",
 		},
 		{
 			"<leader>fg",
 			function()
 				require("fzf-lua").live_grep()
 			end,
-			desc = "Fuzzy search with rg",
+			desc = "[F]uzzy search with live [G]rep",
 		},
 		{
 			"<leader>fb",
 			function()
-				require("fzf-lua").buffers()
+				require("fzf-lua").builtin()
 			end,
-			desc = "Fuzzy search buffers",
+			desc = "[F]uzzy search list of [B]uiltin commands",
 		},
 		{
 			"<leader>fc",
 			function()
 				require("fzf-lua").files({ cwd = vim.fn.stdpath("config") })
 			end,
-			desc = "Fuzzy search in subdirs",
+			desc = "[F]uzzy search in [C]urrent project subdirs",
 		},
 		{
 			"<leader>fr",
 			function()
 				require("fzf-lua").lsp_references()
 			end,
-			desc = "Fuzzy search lsp references",
+			desc = "[F]uzzy search lsp [R]eferences",
 		},
 		{
 			"<leader>fh",
 			function()
 				require("fzf-lua").helptags()
 			end,
-			desc = "Fuzzy search help tags",
+			desc = "[F]uzzy search [H]elp tags",
+		},
+		{
+			"<leader><leader>",
+			function()
+				require("fzf-lua").buffers()
+			end,
+			desc = "Fuzzy search buffers <leader>x2",
 		},
 	},
 }
