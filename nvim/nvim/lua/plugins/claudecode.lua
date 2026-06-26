@@ -5,7 +5,7 @@ return {
 		port_range = { min = 10000, max = 65535 },
 		auto_start = true,
 		log_level = "info",
-		terminal_cmd = "ANTHROPIC_AUTH_TOKEN='freeclaudecode' ANTHROPIC_BASE_URL='http://localhost:8082' claude",
+		terminal_cmd = "sh -c 'ANTHROPIC_AUTH_TOKEN=freeclaudecode ANTHROPIC_BASE_URL=http://localhost:8082 claude'",
 	},
 	config = true,
 	keys = {
